@@ -1,0 +1,17 @@
+:root {
+  --topbar: rgb(255, 245, 212);
+}
+
+#topbar {
+  height: 75px;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: var(--topbar);
+}
+
+#food {
+  position: relative;
+  align-items: center;
+}
