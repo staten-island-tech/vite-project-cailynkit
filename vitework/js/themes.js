@@ -1,5 +1,7 @@
 const themes = {
   light: {
-    "--topbar": "#CCC",
+    "--topbar": "rgb(255, 245, 212)",
   },
 };
+
+export let t = themes;

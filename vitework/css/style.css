@@ -1,17 +1,33 @@
 :root {
-  --topbar: rgb(255, 245, 212);
+  --topbar: #000;
 }
 
 #topbar {
-  height: 75px;
+  height: 100px;
   width: 100%;
   position: absolute;
+  display: flex;
   top: 0px;
   left: 0px;
   background-color: var(--topbar);
+  justify-content: right;
 }
 
 #food {
+  padding-top: 10px;
+  color: #fff;
+  margin: auto;
+  position: absolute;
+  top: 25px;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.button {
+  height: 20px;
+  margin-top: 60px;
+  margin-right: 25px;
   position: relative;
-  align-items: center;
+  right: 30px;
 }
