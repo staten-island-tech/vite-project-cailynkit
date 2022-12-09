@@ -1,5 +1,6 @@
 :root {
   --topbar: #000;
+  --food: #fff;
 }
 
 #topbar {
@@ -15,7 +16,7 @@
 
 #food {
   padding-top: 10px;
-  color: #fff;
+  color: var(--food);
   margin: auto;
   position: absolute;
   top: 25px;
