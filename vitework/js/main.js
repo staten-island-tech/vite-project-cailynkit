@@ -1,7 +1,8 @@
 import { t } from "./themes.js";
 const DOM = {
   root: document.documentElement,
-  lightbutton: document.getElementById("lightbutton"),
+  lightbutton: document.getElementById("light"),
+  darkbutton: document.getElementById("dark"),
 };
 
 function changeTheme(theme) {
@@ -13,4 +14,8 @@ function changeTheme(theme) {
 
 DOM.lightbutton.addEventListener("click", function () {
   changeTheme(t.light);
+});
+
+DOM.darkbutton.addEventListener("click", function () {
+  changeTheme(t.dark);
 });
