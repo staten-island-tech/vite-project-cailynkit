@@ -38,7 +38,8 @@ function buildMain() {
     DOM.main.insertAdjacentHTML(
       "beforeend",
       `<div class="box">
-    <p id="text">${food.name}</p>
+      <img class="img" src="${food.img}</img>
+    <p id="text">Food: ${food.name}</p>
     <p id="text">Meal Type: ${food.meal}</p>
     <p id="text">Price: $${food.price}</p>
    </div>`
