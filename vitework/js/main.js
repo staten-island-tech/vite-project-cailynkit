@@ -39,9 +39,8 @@ function buildMain() {
       "beforeend",
       `<div class="box">
     <p id="text">${food.name}</p>
-    <p id="text">Type: ${food.type}</p>
-    <p id="text">Price: ${food.price}</p>
-    />
+    <p id="text">Meal Type: ${food.meal}</p>
+    <p id="text">Price: $${food.price}</p>
    </div>`
     );
   });
