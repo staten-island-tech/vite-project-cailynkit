@@ -63,6 +63,6 @@ img {
   height: 300px;
 }
 
-#sushi {
-  transform: rotate(90deg);
+#filter {
+  position: absolute;
 }

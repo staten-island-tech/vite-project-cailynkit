@@ -5,6 +5,7 @@ const DOM = {
   lightbutton: document.getElementById("light"),
   darkbutton: document.getElementById("dark"),
   main: document.getElementById("main"),
+  filter: document.getElementById("filter"),
 };
 
 let currentTheme = t.normal;
@@ -37,8 +38,9 @@ function buildMain() {
   Menu.forEach((food) => {
     DOM.main.insertAdjacentHTML(
       "beforeend",
-      `<div class="box">
-      <img class="img" src="${food.img}</img>
+      `<button id="filter">Lunch Food</button>
+      <div class="box">
+      <img class="img" src="${food.img}"></img>
     <p id="text">Food: ${food.name}</p>
     <p id="text">Meal Type: ${food.meal}</p>
     <p id="text">Price: $${food.price}</p>
@@ -47,3 +49,18 @@ function buildMain() {
   });
 }
 buildMain();
+
+DOM.filter.addEventListener("click", function () {
+  Menu.filter((food) => Menu.meal.includes("Lunch")).forEach((food) => {
+    DOM.main.insertAdjacentHTML(
+      "beforeend",
+      `<button id="filter">Lunch Food</button>
+    <div class="box">
+    <img class="img" src="${food.img}"></img>
+  <p id="text">Food: ${food.name}</p>
+  <p id="text">Meal Type: ${food.meal}</p>
+  <p id="text">Price: $${food.price}</p>
+ </div>`
+    );
+  });
+});
