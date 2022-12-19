@@ -38,8 +38,7 @@ function buildMain() {
   Menu.forEach((food) => {
     DOM.main.insertAdjacentHTML(
       "beforeend",
-      `<button id="filter">Lunch Food</button>
-      <div class="box">
+      `<div class="box">
       <img class="img" src="${food.img}"></img>
     <p id="text">Food: ${food.name}</p>
     <p id="text">Meal Type: ${food.meal}</p>
@@ -50,17 +49,24 @@ function buildMain() {
 }
 buildMain();
 
+let alreadyFilteredbyLunch = false;
 DOM.filter.addEventListener("click", function () {
-  Menu.filter((food) => Menu.meal.includes("Lunch")).forEach((food) => {
-    DOM.main.insertAdjacentHTML(
-      "beforeend",
-      `<button id="filter">Lunch Food</button>
-    <div class="box">
+  DOM.main.innerHTML = "";
+  if (!alreadyFilteredbyLunch) {
+    Menu.filter((food) => food.meal.includes("Lunch")).forEach((food) => {
+      DOM.main.insertAdjacentHTML(
+        "beforeend",
+        `<div class="box">
     <img class="img" src="${food.img}"></img>
   <p id="text">Food: ${food.name}</p>
   <p id="text">Meal Type: ${food.meal}</p>
   <p id="text">Price: $${food.price}</p>
  </div>`
-    );
-  });
+      );
+      alreadyFilteredbyLunch = true;
+    });
+  } else {
+    buildMain();
+    alreadyFilteredbyLunch = false;
+  }
 });
