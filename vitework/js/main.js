@@ -5,7 +5,10 @@ const DOM = {
   lightbutton: document.getElementById("light"),
   darkbutton: document.getElementById("dark"),
   main: document.getElementById("main"),
-  filter: document.getElementById("filter"),
+  breakfast: document.getElementById("breakfast"),
+  lunch: document.getElementById("lunch"),
+  dinner: document.getElementById("dinner"),
+  price: document.getElementById("price"),
 };
 
 let currentTheme = t.normal;
@@ -49,8 +52,30 @@ function buildMain() {
 }
 buildMain();
 
+let alreadyFilteredbyBreakfast = false;
+DOM.breakfast.addEventListener("click", function () {
+  DOM.main.innerHTML = "";
+  if (!alreadyFilteredbyBreakfast) {
+    Menu.filter((food) => food.meal.includes("Breakfast")).forEach((food) => {
+      DOM.main.insertAdjacentHTML(
+        "beforeend",
+        `<div class="box">
+    <img class="img" src="${food.img}"></img>
+  <p id="text">Food: ${food.name}</p>
+  <p id="text">Meal Type: ${food.meal}</p>
+  <p id="text">Price: $${food.price}</p>
+ </div>`
+      );
+      alreadyFilteredbyBreakfast = true;
+    });
+  } else {
+    buildMain();
+    alreadyFilteredbyBreakfast = false;
+  }
+});
+
 let alreadyFilteredbyLunch = false;
-DOM.filter.addEventListener("click", function () {
+DOM.lunch.addEventListener("click", function () {
   DOM.main.innerHTML = "";
   if (!alreadyFilteredbyLunch) {
     Menu.filter((food) => food.meal.includes("Lunch")).forEach((food) => {
@@ -68,5 +93,49 @@ DOM.filter.addEventListener("click", function () {
   } else {
     buildMain();
     alreadyFilteredbyLunch = false;
+  }
+});
+
+let alreadyFilteredbyDinner = false;
+DOM.dinner.addEventListener("click", function () {
+  DOM.main.innerHTML = "";
+  if (!alreadyFilteredbyDinner) {
+    Menu.filter((food) => food.meal.includes("Dinner")).forEach((food) => {
+      DOM.main.insertAdjacentHTML(
+        "beforeend",
+        `<div class="box">
+    <img class="img" src="${food.img}"></img>
+  <p id="text">Food: ${food.name}</p>
+  <p id="text">Meal Type: ${food.meal}</p>
+  <p id="text">Price: $${food.price}</p>
+ </div>`
+      );
+      alreadyFilteredbyDinner = true;
+    });
+  } else {
+    buildMain();
+    alreadyFilteredbyDinner = false;
+  }
+});
+
+let alreadyFilteredbyPrice = false;
+DOM.price.addEventListener("click", function () {
+  DOM.main.innerHTML = "";
+  if (!alreadyFilteredbyPrice) {
+    Menu.filter((food) => food.price < 5).forEach((food) => {
+      DOM.main.insertAdjacentHTML(
+        "beforeend",
+        `<div class="box">
+    <img class="img" src="${food.img}"></img>
+  <p id="text">Food: ${food.name}</p>
+  <p id="text">Meal Type: ${food.meal}</p>
+  <p id="text">Price: $${food.price}</p>
+ </div>`
+      );
+      alreadyFilteredbyPrice = true;
+    });
+  } else {
+    buildMain();
+    alreadyFilteredbyPrice = false;
   }
 });

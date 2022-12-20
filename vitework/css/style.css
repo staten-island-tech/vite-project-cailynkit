@@ -63,7 +63,14 @@ img {
   height: 300px;
 }
 
-#filter {
+#buttons {
   position: absolute;
-  margin: 80px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.filter {
+  margin: 0px 10px;
 }
