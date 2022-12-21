@@ -5,17 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Lora:wght@500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="topbar">
-      <button class="button" id="light">Light Theme</button>
-      <button class="button" id="dark">Dark Theme</button>
+      <button class="themebutton" id="light">Light Theme</button>
+      <button class="themebutton" id="dark">Dark Theme</button>
     </div>
-    <div id="buttons">
-      <button class="filter" id="breakfast">Filter by Breakfast Food</button>
-      <button class="filter" id="lunch">Filter by Lunch Food</button>
-      <button class="filter" id="dinner">Filter by Dinner Food</button>
-      <button class="filter" id="price">Filter by Food Less Than $5</button>
+    <div class="buttons">
+      <button class="filterbutton" id="breakfast">
+        Filter by Breakfast Food
+      </button>
+      <button class="filterbutton" id="lunch">Filter by Lunch Food</button>
+      <button class="filterbutton" id="dinner">Filter by Dinner Food</button>
+      <button class="filterbutton" id="price">
+        Filter by Food Less Than $5
+      </button>
     </div>
     <h1 id="food">Food</h1>
     <div id="main"></div>
