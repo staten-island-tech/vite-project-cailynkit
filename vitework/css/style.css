@@ -68,6 +68,7 @@ img {
   margin: 0 auto;
   display: block;
   height: 300px;
+  width: 100px;
   padding: 10px;
   border-radius: 20px;
 }
