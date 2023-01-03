@@ -126,7 +126,8 @@ DOM.price.addEventListener("click", function () {
       DOM.main.insertAdjacentHTML(
         "beforeend",
         `<div class="box">
-    <img class="img" src="${food.img}"></img>
+    <img class="img" src="${food.img}"> 
+    /img>
   <p id="text">Food: ${food.name}</p>
   <p id="text">Meal Type: ${food.meal}</p>
   <p id="text">Price: $${food.price}</p>
